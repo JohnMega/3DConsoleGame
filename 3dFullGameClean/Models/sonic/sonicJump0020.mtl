@@ -1,0 +1,52 @@
+# Blender 4.1.1 MTL File: 'None'
+# www.blender.org
+
+newmtl null.006
+Ns 50.000011
+Ka 1.000000 1.000000 1.000000
+Kd 0.749020 0.749020 0.749020
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+d 1.000000
+illum 3
+
+newmtl sonic_soapshoes.006
+Ns 50.000011
+Ka 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 3
+map_Kd sonic_soapshoes.bmp
+map_d sonic_soapshoes.png
+
+newmtl stx_00.006
+Ns 50.000011
+Ka 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 3
+map_Kd stx_00.bmp
+map_d stx_00.png
+
+newmtl stx_01.006
+Ns 50.000011
+Ka 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 3
+map_Kd stx_01.bmp
+map_d stx_01.png
+
+newmtl stx_ref00.006
+Ns 50.000011
+Ka 1.000000 1.000000 1.000000
+Ks 1.000000 1.000000 1.000000
+Ke 0.000000 0.000000 0.000000
+Ni 1.500000
+illum 3
+map_Kd stx_ref00.bmp
+map_d stx_ref00.png
