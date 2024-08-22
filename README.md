@@ -1,4 +1,4 @@
-3D Windows Console Game Engine. All calculations are performed on the CPU. The game engine is written without using any graphics libraries.
+![D__3d_wc exe-2024-08-22-11-56-47 (1)](https://github.com/user-attachments/assets/a3541fd1-8772-43ac-bd71-04caa038a29a)3D Windows Console Game Engine. All calculations are performed on the CPU. The game engine is written without using any graphics libraries.
 
 Github:
 3DConsoleGame: https://github.com/JohnMega/3DConsoleGame
@@ -25,7 +25,7 @@ After that, to freeze the object, you need to press Enter again.
 
 3) How to select an existing object:
 You need to press H, navigate to the desired object and press Enter.
-![D__3d_wc exe-2024-08-22-12-07-39](https://github.com/user-attachments/assets/1d1a0dea-fd5a-4fdb-a29f-2cfb696bbb79)
+![D__3d_wc exe-2024-08-22-11-56-47 (1)](https://github.com/user-attachments/assets/691f8518-9829-4efa-b301-9f0b8fff5e5d)
 
 4) How to move/rotate/resize a selected object:
 You need to select some object, and then press:
