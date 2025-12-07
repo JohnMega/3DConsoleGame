@@ -1,18 +1,8 @@
-## Build
-
-To build a project using Visual Studio, you need to set all the include directories (which store the source code) that are located in the source folder.
-
-1. Go to the solution properties
-2. Select VC++ Directories
-3. In the Include Directories tab, set the required paths to the directories:
-   <img width="702" height="667" alt="image" src="https://github.com/user-attachments/assets/da0a815f-8a8c-43f3-a886-a42084901e04" />
-
-
 ## Description
 
 Demonstration: https://www.youtube.com/watch?v=gkDSImgfPus
 
-3D Windows Console Game Engine. All calculations are performed on the CPU. The game engine is written without using any graphics libraries.
+3D Console Game Engine. All calculations are performed on the CPU. The game engine is written without using any graphics libraries.
 
 Github:
 3DConsoleGame: https://github.com/JohnMega/3DConsoleGame
