@@ -1,6 +1,6 @@
 #pragma once
 
-#include <Windows.h>
+#include "Platform.h"
 #include "ACamera.h"
 
 extern char key;

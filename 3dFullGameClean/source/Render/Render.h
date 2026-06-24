@@ -1,5 +1,5 @@
 #pragma once
-#include <Windows.h>
+#include "Platform.h"
 #include <string>
 #include <vector>
 #include "GlobalVars.h"

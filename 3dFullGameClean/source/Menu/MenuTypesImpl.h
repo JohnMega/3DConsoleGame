@@ -1,6 +1,6 @@
 #pragma once
 
-#include <Windows.h>
+#include "Platform.h"
 #include <iostream>
 
 #include "MenuTypesDeclares.h"
@@ -28,13 +28,13 @@ void LAST_MENU_CLASS_NAME::CheckAddMenuTypesToStorage()
 
 	if (currGameMenuState == GAME_MENU_TYPE::NEW_GAME)
 	{
-		system("cls");
+		clearScreen();
 		setWall();
 
 		SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), { SCREEN_WIDTH / 2 - 10, SCREEN_HEIGHT / 2 - 2 });
 		std::cout << "Enter the map name";
 		SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), { SCREEN_WIDTH / 2 - 10, SCREEN_HEIGHT / 2 - 1 });
-		std::cin >> mapName;
+		platform::readToken(mapName);
 
 		std::ifstream in(mapName);
 		if (!in.is_open())
@@ -60,23 +60,23 @@ void LAST_MENU_CLASS_NAME::CheckAddMenuTypesToStorage()
 
 	if (currGameMenuState == GAME_MENU_TYPE::CREATE_SERVER)
 	{
-		system("cls");
+		clearScreen();
 		setWall();
 
 		SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), { SCREEN_WIDTH / 2 - 10, SCREEN_HEIGHT / 2 - 2 });
 		std::cout << "Enter your IP adress";
 		SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), { SCREEN_WIDTH / 2 - 10, SCREEN_HEIGHT / 2 - 1 });
-		std::cin >> serverPartData.myServerIP;
+		platform::readToken(serverPartData.myServerIP);
 
 		while (true)
 		{
-			system("cls");
+			clearScreen();
 			setWall();
 
 			SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), { SCREEN_WIDTH / 2 - 10, SCREEN_HEIGHT / 2 - 2 });
 			std::cout << "Enter the map name";
 			SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), { SCREEN_WIDTH / 2 - 10, SCREEN_HEIGHT / 2 - 1 });
-			std::cin >> mapName;
+			platform::readToken(mapName);
 
 			std::ifstream in(mapName);
 			if (!in.is_open())
@@ -110,13 +110,13 @@ void LAST_MENU_CLASS_NAME::CheckAddMenuTypesToStorage()
 
 	if (currGameMenuState == GAME_MENU_TYPE::CONNECT_TO_SERVER)
 	{
-		system("cls");
+		clearScreen();
 		setWall();
 
 		SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), { SCREEN_WIDTH / 2 - 10, SCREEN_HEIGHT / 2 - 2 });
 		std::cout << "Enter IP adress";
 		SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), { SCREEN_WIDTH / 2 - 10, SCREEN_HEIGHT / 2 - 1 });
-		std::cin >> clientPartData.serverIP;
+		platform::readToken(clientPartData.serverIP);
 
 		ClientConnection();
 		std::thread* srDataHandle = new std::thread(ServerDataHandle);

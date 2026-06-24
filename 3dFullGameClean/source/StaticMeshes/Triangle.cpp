@@ -1,7 +1,7 @@
 #include <iostream>
 #include <chrono>
 #include <mutex>
-#include <Windows.h>
+#include "Platform.h"
 #include "Triangle.h"
 
 Triangle::Triangle(COORDS dot1, COORDS dot2, COORDS dot3, Model* ownerModel, COORDS rgbColor)

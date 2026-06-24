@@ -1,17 +1,16 @@
 ﻿
 #define _SILENCE_EXPERIMENTAL_FILESYSTEM_DEPRECATION_WARNING
 #include <iostream>
-#include <conio.h>
+#include "Platform.h"
 #include <cmath>
 #include <thread>
 #include <chrono>
 #include <tuple>
 #include <fstream>
-#include <experimental/filesystem>
 #include <filesystem>
 
 #pragma comment(lib, "ws2_32.lib")
-#include <winsock2.h>
+#include "Platform.h"
 
 #pragma warning(disable: 4996)
 
@@ -134,13 +133,13 @@ void SpritesPreLoadTextures()
     preLoadTexturesNames.push_back("Textures/missing_textures/missing_textures.bmp");
     preLoadTexturesNames.push_back("Textures/Obsolete/Obsolete.bmp");
 
-    std::string path = std::experimental::filesystem::current_path().string();
-    path += "\\Textures";
+    std::string path = std::filesystem::current_path().string();
+    path += "/Textures";
 
     for (const auto& entry : std::filesystem::directory_iterator(path))
     {
         std::string fn;
-        fn.insert(0, entry.path().string().c_str() + entry.path().string().find_last_of('\\') + 1);
+        fn.insert(0, entry.path().string().c_str() + entry.path().string().find_last_of("/\\") + 1);
 
         if (fn.find(".bmp") != std::string::npos)
         {
@@ -166,13 +165,13 @@ void TrianglePreLoadTextures()
     std::vector<std::string> preLoadTexturesNames;
     preLoadTexturesNames.push_back("Textures/missing_textures/missing_textures.bmp");
 
-    std::string path = std::experimental::filesystem::current_path().string();
-    path += "\\Textures";
+    std::string path = std::filesystem::current_path().string();
+    path += "/Textures";
 
     for (const auto& entry : std::filesystem::directory_iterator(path))
     {
         std::string fn;
-        fn.insert(0, entry.path().string().c_str() + entry.path().string().find_last_of('\\') + 1);
+        fn.insert(0, entry.path().string().c_str() + entry.path().string().find_last_of("/\\") + 1);
 
         if (fn.find(".bmp") != std::string::npos)
         {

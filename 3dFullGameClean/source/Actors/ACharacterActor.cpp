@@ -1,7 +1,7 @@
 
 #include <thread>
 #include <iostream>
-#include "Windows.h"
+#include "Platform.h"
 #include "ACharacterActor.h"
 
 extern char key;
