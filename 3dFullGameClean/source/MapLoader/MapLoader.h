@@ -344,9 +344,17 @@ DEFINE_FUNCTION(ExTrigger)
     observedObjCentreCoord.y = atof(stack.codePtr); while (*stack.codePtr++ != ';') {}
     observedObjCentreCoord.z = atof(stack.codePtr); while (*stack.codePtr++ != '}') {}
 
+    // Trigger elements end with a trailing ";<n>;" field after the observed
+    // coords (the trigger's link count, 0 in shipped maps). The original handler
+    // never consumed it, so Step() misread the stray digit as the next element's
+    // type and the unguarded field scans ran off the buffer -> hang on any map
+    // using triggers (test/snow/shakeTest/ickypop). Consume it.
+    stack.codePtr++;
+    while (*stack.codePtr++ != ';') {}
+
     InvisibleParallelepiped* newObj = new InvisibleParallelepiped(length, width, height, centreCoords, false, false, false, 1, objectType::TRIGGER);
     AddActorToStorage<ATriggerActor>(actors, newObj, observedObjCentreCoord, parRange);
-    
+
     stack.Step();
 }
 
