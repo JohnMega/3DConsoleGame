@@ -35,7 +35,7 @@ public: \
 	{ \
 		LAST_MENU_CLASS_NAME::DrawMenuTypes(); \
 		\
-		if(currentMenuType == MENU_TYPES::##MenuTypeName##_MENU) \
+		if(currentMenuType == MENU_TYPES::MenuTypeName##_MENU) \
 		{ \
 			SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), { ProgName##Info.x, ProgName##Info.y }); \
 				std::cout << #MenuName; \
@@ -45,9 +45,9 @@ public: \
 	{ \
 		LAST_MENU_CLASS_NAME::DrawMenuStars(); \
 			\
-			if(currentMenuType == MENU_TYPES::##MenuTypeName##_MENU) \
+			if(currentMenuType == MENU_TYPES::MenuTypeName##_MENU) \
 			{ \
-			if (curr##VarMenuTypeName##MenuState == MenuTypeName##_MENU_TYPE::##EnumName) \
+			if (curr##VarMenuTypeName##MenuState == MenuTypeName##_MENU_TYPE::EnumName) \
 			{ \
 				SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), { ProgName##Info.x - 2, ProgName##Info.y }); \
 				std::cout << "*"; \
@@ -63,7 +63,7 @@ public: \
 	{ \
 		LAST_MENU_CLASS_NAME::ClearMenuTypes(); \
 		\
-		if(currentMenuType == MENU_TYPES::##MenuTypeName##_MENU) \
+		if(currentMenuType == MENU_TYPES::MenuTypeName##_MENU) \
 		{ \
 			SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), { ProgName##Info.x - 2, ProgName##Info.y }); \
 			std::cout << "                         "; \

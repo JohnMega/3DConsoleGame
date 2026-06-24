@@ -361,3 +361,7 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+# Linux/macOS build artifacts (Makefile)
+*.o
+*.d
+3dFullGameClean/3dgame

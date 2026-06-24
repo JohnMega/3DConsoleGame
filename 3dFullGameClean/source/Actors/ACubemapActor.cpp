@@ -1,6 +1,6 @@
 
 #include <string>
-#include <Windows.h>
+#include "Platform.h"
 #include "ACubemapActor.h"
 
 ACubemapActor::ACubemapActor(AActor* observedObj) : observedObj(observedObj)

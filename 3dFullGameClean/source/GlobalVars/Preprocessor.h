@@ -35,11 +35,11 @@
 #define Y_AXIS_ROTATION_KEY 'x'
 #define Z_AXIS_ROTATION_KEY 'c'
 
-#define EXTENSION_CAST_INNER(str) . ## str
-#define EXTENSION_CAST(str) EXTENSION_CAST_INNER(str)
-
-#define FILE_EXTENSION_INNER(str, extension) str ## .append(#extension)
-#define FILE_EXTENSION(str, extension) FILE_EXTENSION_INNER(str, extension)
+// ponytail: the original used MSVC-only token pasting (`. ## str`, `str ## .append`)
+// purely to build `<str>.append(".<ext>")`. Rewritten portably (GCC/Clang reject
+// pasting across `.`/`)`); expansion is byte-identical on every compiler.
+#define EXTENSION_CAST(str) str
+#define FILE_EXTENSION(str, extension) str.append("." #extension)
 
 #define UPROPERTY_(TypeName, VarName)\
 bool isActorHas##TypeName() const noexcept override\

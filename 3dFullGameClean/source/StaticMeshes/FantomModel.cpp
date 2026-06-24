@@ -1,6 +1,6 @@
 
 #include <iostream>
-#include <Windows.h>
+#include "Platform.h"
 #include <format>
 #include <fstream>
 #include "FantomModel.h"

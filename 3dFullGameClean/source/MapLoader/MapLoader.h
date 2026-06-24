@@ -92,6 +92,11 @@ public:
         {
             while (std::getline(in, line))
             {
+                // Strip trailing CR so CRLF maps load identically on Linux/macOS,
+                // where ifstream (unlike Windows text mode) leaves the '\r' in.
+                // The delimiter-scanning parser has no end-of-buffer guard, so a
+                // stray '\r' before the final '|' overruns the buffer and hangs.
+                if (!line.empty() && line.back() == '\r') line.pop_back();
                 code.append(line);
             }
         }

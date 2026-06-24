@@ -1,6 +1,6 @@
 
 #include <cmath>
-#include <Windows.h>
+#include "Platform.h"
 #include "Pyramid.h"
 
 Pyramid::Pyramid(float lowerBaselength, float lowerBasewidth, float height, float upperBaseLength, float upperBaseWidth, COORDS centreCoord, int color)

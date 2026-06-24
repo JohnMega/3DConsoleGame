@@ -1,6 +1,6 @@
 #pragma once
 
-#include <Windows.h>
+#include "Platform.h"
 #include "Maths.h"
 #include "StaticMesh.h"
 #include "ACamera.h"

@@ -1,7 +1,7 @@
 
 #include <iostream>
 #include <cmath>
-#include <Windows.h>
+#include "Platform.h"
 #include "Parallelepiped.h"
 #include "ACameraActor.h"
 

@@ -4,6 +4,26 @@ Demonstration: https://www.youtube.com/watch?v=gkDSImgfPus
 
 3D Console Game Engine. All calculations are performed on the CPU. The game engine is written without using any graphics libraries.
 
+## Building
+
+### Windows
+Open `3dFullGameClean.sln` in Visual Studio and build (the original target).
+
+### Linux / macOS
+A `Makefile` is provided. Requires a C++20 compiler (GCC 10+ or Clang 12+).
+
+```sh
+cd 3dFullGameClean
+make          # builds ./3dgame
+make run      # builds and runs (run from this directory so Textures/, Models/ and *.bsp resolve)
+```
+
+Cross-platform support is isolated in `source/Platform/Platform.h`: on Windows it
+includes the real `<Windows.h>`/`<conio.h>`/`<WinSock2.h>` (behaviour unchanged),
+on POSIX it shims the console/input/mouse/Winsock APIs with termios, ANSI escape
+codes and BSD sockets. Run inside a terminal at least 64x26. Mouse look uses ANSI
+mouse reporting (xterm-compatible terminals such as kitty, alacritty, xterm).
+
 Github:
 3DConsoleGame: https://github.com/JohnMega/3DConsoleGame
 wc: https://github.com/JohnMega/wc

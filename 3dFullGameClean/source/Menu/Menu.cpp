@@ -2,9 +2,7 @@
 #include <fstream>
 #include <thread>
 #include <iostream>
-#include <conio.h>
-#include <WinSock2.h>
-#include <WS2tcpip.h>
+#include "Platform.h"
 
 #include "Menu.h"
 #include "MenuTypesDeclares.h"

@@ -1,18 +1,17 @@
 
 #define _SILENCE_EXPERIMENTAL_FILESYSTEM_DEPRECATION_WARNING
-#include <experimental/filesystem>
 #include <filesystem>
 #include "ModelsManager.h"
 
 ModelsManager::ModelsManager() : currLoadedModelsPtr(0)
 {
-    std::string path = std::experimental::filesystem::current_path().string();
-    path += "\\Models";
+    std::string path = std::filesystem::current_path().string();
+    path += "/Models";
 
     for (const auto& entry : std::filesystem::directory_iterator(path))
     {
         std::string fn;
-        fn.insert(0, entry.path().string().c_str() + entry.path().string().find_last_of('\\') + 1);
+        fn.insert(0, entry.path().string().c_str() + entry.path().string().find_last_of("/\\") + 1);
         
         if (fn.find(".obj") == std::string::npos && fn.find(".mtl") == std::string::npos && fn != "playerstart" && fn != "Error"
             && fn != "arrows" && fn != "circles" && fn != "scales")

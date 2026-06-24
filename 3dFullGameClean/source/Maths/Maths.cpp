@@ -1,5 +1,5 @@
 
-#include <Windows.h>
+#include "Platform.h"
 #include "Maths.h"
 
 float dotDistance(COORDS firstDot, COORDS secondDot)
